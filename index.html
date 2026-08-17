@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartCalc Hub - Free Financial Calculators</title>
+    <meta name="description" content="Free online financial calculators: loan, mortgage, interest, and savings goal calculators. Fast, accurate, and easy to use.">
+    <meta name="keywords" content="loan calculator, mortgage calculator, interest calculator, savings calculator, financial tools, USA, UK, Canada, Australia">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>SmartCalc Hub</h1>
+            <p class="tagline">Free Financial Calculators for Smart Decisions</p>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="articles.html">Articles</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Welcome to SmartCalc Hub</h2>
+            <p>Our free online financial calculators help you make informed decisions about loans, mortgages, savings, and investments. Fast, accurate, and easy to use.</p>
+        </section>
+
+        <!-- Loan Calculator -->
+        <section class="calculator" id="loan-calculator">
+            <h3>Loan Calculator</h3>
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label for="loan-amount">Loan Amount ($)</label>
+                    <input type="number" id="loan-amount" placeholder="e.g., 10000" min="0" step="100">
+                </div>
+                <div class="input-group">
+                    <label for="loan-rate">Interest Rate (%)</label>
+                    <input type="number" id="loan-rate" placeholder="e.g., 5.5" min="0" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label for="loan-term">Loan Term (Years)</label>
+                    <input type="number" id="loan-term" placeholder="e.g., 5" min="1" max="50">
+                </div>
+                <button onclick="calculateLoan()">Calculate</button>
+            </div>
+            <div class="result" id="loan-result"></div>
+        </section>
+
+        <!-- Mortgage Calculator -->
+        <section class="calculator" id="mortgage-calculator">
+            <h3>Mortgage Calculator</h3>
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label for="home-price">Home Price ($)</label>
+                    <input type="number" id="home-price" placeholder="e.g., 300000" min="0" step="1000">
+                </div>
+                <div class="input-group">
+                    <label for="down-payment">Down Payment ($)</label>
+                    <input type="number" id="down-payment" placeholder="e.g., 60000" min="0" step="1000">
+                </div>
+                <div class="input-group">
+                    <label for="mortgage-rate">Interest Rate (%)</label>
+                    <input type="number" id="mortgage-rate" placeholder="e.g., 4.25" min="0" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label for="mortgage-term">Loan Term (Years)</label>
+                    <input type="number" id="mortgage-term" placeholder="e.g., 30" min="1" max="50">
+                </div>
+                <button onclick="calculateMortgage()">Calculate</button>
+            </div>
+            <div class="result" id="mortgage-result"></div>
+        </section>
+
+        <!-- Interest Calculator -->
+        <section class="calculator" id="interest-calculator">
+            <h3>Compound Interest Calculator</h3>
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label for="principal">Principal Amount ($)</label>
+                    <input type="number" id="principal" placeholder="e.g., 5000" min="0" step="100">
+                </div>
+                <div class="input-group">
+                    <label for="annual-rate">Annual Interest Rate (%)</label>
+                    <input type="number" id="annual-rate" placeholder="e.g., 6" min="0" step="0.1">
+                </div>
+                <div class="input-group">
+                    <label for="years">Years to Grow</label>
+                    <input type="number" id="years" placeholder="e.g., 10" min="1" max="50">
+                </div>
+                <div class="input-group">
+                    <label for="compound">Compound Frequency</label>
+                    <select id="compound">
+                        <option value="1">Annually</option>
+                        <option value="4">Quarterly</option>
+                        <option value="12">Monthly</option>
+                        <option value="52">Weekly</option>
+                    </select>
+                </div>
+                <button onclick="calculateInterest()">Calculate</button>
+            </div>
+            <div class="result" id="interest-result"></div>
+        </section>
+
+        <!-- Savings Calculator -->
+        <section class="calculator" id="savings-calculator">
+            <h3>Savings Goal Calculator</h3>
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label for="goal-amount">Goal Amount ($)</label>
+                    <input type="number" id="goal-amount" placeholder="e.g., 50000" min="0" step="1000">
+                </div>
+                <div class="input-group">
+                    <label for="current-savings">Current Savings ($)</label>
+                    <input type="number" id="current-savings" placeholder="e.g., 10000" min="0" step="1000">
+                </div>
+                <div class="input-group">
+                    <label for="monthly-contribution">Monthly Contribution ($)</label>
+                    <input type="number" id="monthly-contribution" placeholder="e.g., 500" min="0" step="50">
+                </div>
+                <div class="input-group">
+                    <label for="savings-rate">Annual Interest Rate (%)</label>
+                    <input type="number" id="savings-rate" placeholder="e.g., 4" min="0" step="0.1">
+                </div>
+                <button onclick="calculateSavings()">Calculate</button>
+            </div>
+            <div class="result" id="savings-result"></div>
+        </section>
+
+        <section class="articles-preview">
+            <h2>Latest Articles</h2>
+            <div class="article-grid">
+                <article>
+                    <h4>How to Choose the Best Mortgage Rate in 2026</h4>
+                    <p>Learn the key factors that affect mortgage rates and how to secure the best deal for your home loan.</p>
+                    <a href="articles.html#mortgage-article">Read More →</a>
+                </article>
+                <article>
+                    <h4>5 Smart Ways to Pay Off Your Loan Faster</h4>
+                    <p>Discover proven strategies to reduce your loan term and save thousands in interest payments.</p>
+                    <a href="articles.html#loan-article">Read More →</a>
+                </article>
+                <article>
+                    <h4>Compound Interest: Your Path to Wealth</h4>
+                    <p>Understand how compound interest works and how to leverage it for long-term financial growth.</p>
+                    <a href="articles.html#interest-article">Read More →</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or suggestions? Reach out to us at: <a href="mailto:contact@smartcalchub.com">contact@smartcalchub.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SmartCalc Hub. All rights reserved.</p>
+            <p><small>Disclaimer: These calculators are for informational purposes only. Consult a financial advisor for personalized advice.</small></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
